@@ -51,7 +51,7 @@ let start = (port = process.env.PORT) => {
 };
 
 // from lab-14
-// NTM: do I need this?
+// NoteToMyself: do I need this?
 //let isRunning = false;
 // module.exports = {
 //   server: app,
