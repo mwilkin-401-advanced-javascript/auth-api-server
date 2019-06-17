@@ -26,7 +26,7 @@ const users = new mongoose.Schema({
 users.virtual('acl', {
   ref: 'roles',
   localField: 'role',
-  foreignFeild: 'role',
+  foreignField: 'role',
   justOne:true,
 });
 
