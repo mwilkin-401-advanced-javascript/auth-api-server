@@ -4,11 +4,11 @@ const Model = require('../mongo-model.js');
 const schema = require('./players-schema.js');
 
 /**
-* @module src/models/teams/teams-model
+* @module src/models/teams/players-model
  */
 
 /**
-* @Class Teams Model
+* @Class Players Model
 * @property {class} - class extends from model
  */
 
