@@ -44,22 +44,4 @@ describe('api server', () => {
 
   });
 
-
-  // it('following a post to a valid model, should find a single record', () => {
-
-  //   let obj = {name:'John', bats:'R',throws:'R',position:'C',team:'Bunnies'};
-
-  //   return mockRequest
-  //     .post('/api/v1/players')
-  //     .send(obj)
-  //     .then(results => {
-  //       return mockRequest.get(`/api/v1/players/${results.body._id}`)
-  //         .then(list => {
-  //           expect(list.status).toBe(200);
-  //           expect(list.body.team).toEqual(obj.team);
-  //         });
-  //     });
-
-  // });
-
 });
