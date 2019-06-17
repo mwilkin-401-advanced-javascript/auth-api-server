@@ -56,7 +56,3 @@ Running the app
 How do you run tests?
 
 `npm test`
-
-  
-
-
