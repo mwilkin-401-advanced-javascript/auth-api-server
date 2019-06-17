@@ -37,7 +37,7 @@ app.use(express.static('docs'));
 // Routes
 app.use(v1Router);
 app.use(authRouter);
-app.use(newRouter);
+// app.use(newRouter);
 
 // Catchalls
 app.use(notFound);
