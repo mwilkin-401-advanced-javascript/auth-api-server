@@ -8,7 +8,7 @@
  
 * [Heroku-master](https://damp-gorge-26033.herokuapp.com/)
 
-* [Heroku-dev]()
+* [Heroku-dev](https://arcane-badlands-59476.herokuapp.com/)
 
 * [Submission PR](https://github.com/mwilkin-401-advanced-javascript/auth-api-server/pull/1)
 
