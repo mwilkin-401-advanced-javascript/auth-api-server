@@ -16,8 +16,8 @@ const morgan = require('morgan');
 const errorHandler = require( `${cwd}/src/middleware/500.js`);
 const notFound = require( `${cwd}/src/middleware/404.js` );
 const v1Router = require( `${cwd}/src/api/v1.js` );
-const authRouter = require( `${cwd}/src/api/auth/router.js` );
-const newRouter = require(`${cwd}/src/api/auth/routes/routes.js`);
+const authRouter = require( `${cwd}/src/auth/router.js` );
+// const newRouter = require(`${cwd}/src/auth/routes/routes.js`);
 
 // Prepare the express app
 const app = express();
@@ -37,7 +37,7 @@ app.use(express.static('docs'));
 // Routes
 app.use(v1Router);
 app.use(authRouter);
-app.use(newRouter);
+// app.use(newRouter);
 
 // Catchalls
 app.use(notFound);
@@ -51,7 +51,7 @@ let start = (port = process.env.PORT) => {
 };
 
 // from lab-14
-// NTM: do I need this?
+// NoteToMyself: do I need this?
 //let isRunning = false;
 // module.exports = {
 //   server: app,

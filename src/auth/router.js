@@ -1,18 +1,28 @@
 'use strict';
 
+/**
+* API Router Module
+* @module src/auth/router
+*
+ */
+
+
 const express = require('express');
 const authRouter = express.Router();
 
 const User = require('./users-model.js');
-const Role = require('./roles-mode.js');
+const Role = require('./roles-model.js');
 const auth = require('./middleware.js');
 const oauth = require('./oauth/google.js');
 
-// const capabilities = {
-//   admin: ['create', 'update', 'delete', 'read'],
-//   user: ['read'],
 
-// };
+/**
+ * post route assign role
+ * @route POST /{role}/
+ * @consumes application/json application
+ * @returns {Object} 500 - Server error
+ * @returns {Object} 200 - result
+ */
 
 authRouter.post('/role', (req, res, next) => {
   let role = new Role(req.body);
@@ -22,6 +32,14 @@ authRouter.post('/role', (req, res, next) => {
     })
     .catch(next);
 });
+
+/**
+ * signup user
+ * @route POST /{signup}/
+ * @consumes application/json application/xml
+ * @returns {Object} 500 - Server error
+ * @returns {Object} 200 - { count: 3, results: [{}, {}, {}]}
+ */
 
 authRouter.post('/signup', (req, res, next) => {
   let user = new User(req.body);
@@ -36,10 +54,26 @@ authRouter.post('/signup', (req, res, next) => {
     .catch(next);
 });
 
+/**
+ * signin user
+ * @route GET /{signin}/
+ * @consumes application/json application/xml
+ * @returns {Object} 500 - Server error
+ * @returns {Object} 200 - response - token
+ */
+
 authRouter.get('/signin', auth(), (req, res, next) => {
   res.cookie('auth', req.token);
   res.send(req.token);
 });
+
+/**
+ * oauth user
+ * @route GET /{oauth}/
+ * @consumes application/json application/xml
+ * @returns {Object} 500 - Server error
+ * @returns {Object} 200 - response token
+ */
 
 authRouter.get('/oauth', (req,res,next) => {
   oauth.authorize(req)
@@ -49,9 +83,24 @@ authRouter.get('/oauth', (req,res,next) => {
     .catch(next);
 });
 
+/**
+ * Saves the key
+ * @route POST /{model}/
+ * @consumes application/json application/xml
+ * @returns {Object} 500 - Server error
+ * @returns {Object} 200 - result - key
+ */
+
+
 authRouter.post('/key', auth, (req,res,next) => {
   let key = req.user.generateKey();
   res.status(200).send(key);
 });
+
+
+/**
+ * Export object with authrouter
+ * @type {Object}
+ */
 
 module.exports = authRouter;
