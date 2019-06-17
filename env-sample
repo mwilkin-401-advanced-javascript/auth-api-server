@@ -1,2 +1,9 @@
 PORT - 3000
-MONGODB_URI - mongodb://localhost:27017/class-09
+MONGODB_URI - mongodb://localhost:27017/api-auth-server
+SECRET='secretstring'
+SINGLE_USE_TOKENS=false
+TOKEN_LIFETIME=10m
+API_URL=Heroku url
+
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=

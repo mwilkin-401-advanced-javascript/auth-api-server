@@ -1,5 +1,11 @@
 'use strict';
 
+/**
+* Users-Model
+* @module src/auth/users-model
+*
+ */
+
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -32,12 +38,6 @@ users.pre('findOne', function() {
     console.error('error', e);
   }
 });
-
-// const capabilities = {
-//   admin: ['create','read','update','delete'],
-//   editor: ['create', 'read', 'update'],
-//   user: ['read'],
-// };
 
 users.pre('save', function(next) {
   bcrypt.hash(this.password, 10)
@@ -115,5 +115,10 @@ users.methods.can = function(capability) {
 users.methods.generateKey = function() {
   return this.generateToken('key');
 };
+
+/**
+ * Export object with users-model
+ * @type {Object}
+ */
 
 module.exports = mongoose.model('users', users);
