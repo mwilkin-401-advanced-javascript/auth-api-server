@@ -15,7 +15,7 @@ module.exports = (capability) => {
 
     const _authBasic = require('./authModules/authBasic.js'); 
     const _authBearer = require('./authModules/authBearer.js');
-    // const _authError = require('./authModules/authError.js');
+    const _authError = require('./authModules/authError.js');
 
     try {
       let [authType, authString] = req.headers.authorization.split(/\s+/);
@@ -51,21 +51,21 @@ module.exports = (capability) => {
     //     .catch(_authError);
     // }
 
-    // way to secure route if they are a user and don't have a capability assigned
-    function _authenticate(user) {
-      if ( user && (!capability || (user.can(capability))) ) {
-        req.user = user;
-        req.token = user.generateToken();
-        next();
-      }
-      else {
-        _authError();
-      }
-    }
+    // // way to secure route if they are a user and don't have a capability assigned
+    // function _authenticate(user) {
+    //   if ( user && (!capability || (user.can(capability))) ) {
+    //     req.user = user;
+    //     req.token = user.generateToken();
+    //     next();
+    //   }
+    //   else {
+    //     _authError();
+    //   }
+    // }
 
-    function _authError() {
-      next('Invalid User ID/Password');
-    }
+    // function _authError() {
+    //   next('Invalid User ID/Password');
+    // }
 
   };
   

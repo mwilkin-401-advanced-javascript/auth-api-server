@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * API Server Module
+ * Auth Module
  * @module src/auth/authModule/authBasic
  */
 

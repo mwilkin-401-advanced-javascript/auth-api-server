@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * API Server Module
+ * Auth Module
  * @module src/auth/authModule/authBearer
  */
 
@@ -17,7 +17,7 @@ function _authBearer(authString) {
 }
 
 /**
- * authBasic module export
+ * authBearer module export
  * @type {Object}
  */
 
