@@ -7,7 +7,11 @@
 
 const _authError = require('./authError.js');
 
-// way to secure route if they are a user and don't have a capability assigned
+/**
+* @desc a way to secure route if they are a user and don't have a capability assigned
+ */ 
+
+// 
 function _authenticate(user, capability) {
   return (req, res, next) => {
     if ( user && (!capability || (user.can(capability))) ) {
