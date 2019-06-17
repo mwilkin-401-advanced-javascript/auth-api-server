@@ -1,10 +1,21 @@
 'use strict';
 
+/**
+* Auth Middleware Module
+* @module src/auth/middleware
+*
+ */
+
 const User = require('./users-model.js');
+
 
 module.exports = (capability) => {
   
   return (req, res, next) => {
+
+    // const _authBasic = require('./authModule/authBasic.js'); 
+    // const _authBearer = require('./authModule/authBearer.js');
+    // const _authError = require('./authModule/authError.js');
 
     try {
       let [authType, authString] = req.headers.authorization.split(/\s+/);
