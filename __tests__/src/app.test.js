@@ -30,18 +30,5 @@ describe('api server', () => {
 
   });
 
-  it('should error with invalid model', ()  => {
-
-    let obj = {name:'John', bats:'R',throws:'R',position:'C',team:'Bunnies'};
-
-    return mockRequest
-      .post('/api/v1/players')
-      .send(obj)
-      .then(results => {
-        expect(results.status).toBe(500);
-        expect(results.body.team).toEqual(undefined);
-      });
-
-  });
 
 });
