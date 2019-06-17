@@ -11,13 +11,13 @@
 * [Heroku-dev](
 https://git.heroku.com/arcane-badlands-59476.git)
 
-* [Submission PR](https://github.com/mwilkin-401-advanced-javascript/auth-api-server/pull/1)
+* [Submission PR](https://github.com/mwilkin-401-advanced-javascript/auth-api-server/pull/2git s)
 
 * [Travis](https://www.travis-ci.com/mwilkin-401-advanced-javascript/auth-api-server)
 
 ### Documentation
 
-<!-- * [UML] <img src="./assets/.jpg" width="400"> -->
+* [UML] <img src="./assets/auth-api-server.jpeg" width="400">
 
 
 ### env setup
